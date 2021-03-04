@@ -1,26 +1,35 @@
+<div align="center">
+
 # AI For Social Good
 
-## Suicidal Ideation Detection in Online messages in social media sites.
+## Suicidal Ideation Detection In Online Social Content
+
+</div>
 
 ---
 
 ## Getting Started
 
-A suicide note used to be the mode of final communication of a person taking his/her own life. But the rise of social media and online communities like Reddit creates safe and anonymous spaces for individuals to be vulnerable and share their thoughts about their mental health and plans about taking their own lives. My project aims to use Natural Language Processing(NLP) tools to analyse text data learn what words are used in a virtual suicide note. With the help of Machine Learning classifiers, and Deep Learning Models i aim to accurately identify individuals at risk of suicide.
+The rise of social media and online communities creates safe and anonymous spaces for individuals to share their thoughts about their mental health and express their feelings and sufferings in online communities. In order to prevent suicide, it is necessary to detect suicide-related posts and users' suicide ideation in cyberspace by natural language processing methods. I focused on the online community called Reddit and the social networking website Twitter, and classify users' posts with potential suicide and without suicidal risk through texts features processing , machine learning and deep learning based methods.
 
 ## Datasets
+
+Collected two sets of data from Reddit and Twitter. The Reddit data set includes (2958) suicidal ideation samples and a number of non-suicide texts (5381). The Twitter dataset has totally (3000) tweets with suicidal ideation.
+Reddit Data was scraped from subreddits like 'suicide watch' ,'depression', 'anxiety' etc.
+Twitter data was collected by quering keywords like 'end my life', 'die' etc.
 
 **The Twitter word cloud (left) and Reddit word cloud (right) are shown as follow:**
 
 <div align="center">
- <img alt="Demo" src="./WordClouds/twitter.png" height="300px" width="400px"/>
+ <img alt="Demo" src="./WordClouds/twitter.png" height="300px" width="400px" />
+ &nbsp; &nbsp;
  <img alt="Demo" src="./WordClouds/reddit.png" height="300px" width="400px"/>
 </div>
 
 ## Feature Processing
 
-- To do this task i scraped two reddits. Mostly people in depression are likely to commit sucide and the one posting sucide notes.So i decided to go with two subreddits depression and suicide.
-- Scraped the data of reddits containing depression and suicide.I scraped nearly 3000 posts.
+- To do this task i scraped two reddits. Mostly people in depression are likely to commit sucide and the one posting sucide notes. So i decided to go with two subreddits depression and suicide.
+- Scraped the data of reddits containing depression and suicide. I scraped nearly 3000 posts.
 - Cleand the data and removed duplicate records and total number of posts left for training was 2000.
 - Performed text analysis (both unigram and bigram) and visulisation of most occuring words in both reddits.
 - Performed vectorization (Both Bag of Words and TFIDF Vectorizer) and trained the model using Random Forest Classifier , Xgboost Classifier and MultinomialNB for classification. Multinomial NB with count vectorizer gives the highest accuracy of 72%.
@@ -28,30 +37,19 @@ A suicide note used to be the mode of final communication of a person taking his
 
 ## Results
 
-- Deep Learning
-- Tensorflow
-- Keras
-- Machine Learning
+Part of experimental results as below on
 
-## Methods
-
-- LSTM
-- Bidirectional LSTM
-- TFIDF
-- Bag Of Words
-- XGBOOST
-- Radom Forest
-- Tensorflow.js
-- Multinomial Naive Bayes
+| Model        | Acc.     | Pre.     | Rec.     | F1       | AUC      |
+| ------------ | -------- | -------- | -------- | -------- | -------- |
+| RF + TFIDF   | 0.941440 | 0.958286 | 0.906931 | 0.931861 | 0.986029 |
+| LSTM + GLOBE | 0.961845 | 0.964161 | 0.948894 | 0.956437 | 0.991860 |
 
 ## Usage
 
-- All the dataset used : `Dataset`
-- Data Collection code : `Data Collection`
-- All The source code / Model Development codes: `Src`
-- All the Pretrained Models : `Models`
-
-`Note:` I have only used only 2000 reddits to train so accuracy is less , Accuracy can be improved by extracting more data form different other social media sites.
+- `Dataset` : All the collected and cleaned dataset
+- `Data_Collection` : Code for scraping data from reddit and twitter
+- `Src` : All The source code for text preprocessing and building ml models
+- `Pretrained_Models` : All the Pretrained Models and tokenizers:
 
 ## License
 
