@@ -10,13 +10,12 @@
 
 ## Getting Started
 
-The rise of social media and online communities creates safe and anonymous spaces for individuals to share their thoughts about their mental health and express their feelings and sufferings in online communities. In order to prevent suicide, it is necessary to detect suicide-related posts and users' suicide ideation in cyberspace by natural language processing methods. I focused on the online community called Reddit and the social networking website Twitter, and classify users' posts with potential suicide and without suicidal risk through texts features processing , machine learning and deep learning based methods.
+The rise of social media and online communities creates safe and anonymous spaces for individuals to share their thoughts about their mental health and express their feelings and sufferings in online communities. To prevent suicide, it is necessary to detect suicide-related posts and user's suicide ideation in cyberspace by natural language processing methods. I focused on the online community called Reddit and the social networking website Twitter, and classify user's posts with potential suicide and without suicidal risk through text features processing, machine learning, and deep learning based methods.
 
 ## Datasets
 
-Collected two sets of data from Reddit and Twitter. The Reddit data set includes (2958) suicidal ideation samples and a number of non-suicide texts (5381). The Twitter dataset has totally (3000) tweets with suicidal ideation.
-Reddit Data was scraped from subreddits like 'suicide watch' ,'depression', 'anxiety' etc.
-Twitter data was collected by quering keywords like 'end my life', 'die' etc.
+Collected two sets of data from Reddit and Twitter. The Reddit data set includes (2958) suicidal ideation samples and a number of non-suicide texts (5381). The Twitter dataset has a total (3000) tweets with suicidal ideation.
+Reddit Data was scraped from subreddits like 'suicide watch', 'depression', 'anxiety' etc. Twitter data was collected by querying keywords like 'end my life', 'die' etc.
 
 **The Twitter word cloud (left) and Reddit word cloud (right) are shown as follow:**
 
@@ -26,23 +25,21 @@ Twitter data was collected by quering keywords like 'end my life', 'die' etc.
  <img alt="Demo" src="./WordClouds/reddit.png" height="300px" width="400px"/>
 </div>
 
-## Feature Processing
+## Feature Processing and Training
 
-- To do this task i scraped two reddits. Mostly people in depression are likely to commit sucide and the one posting sucide notes. So i decided to go with two subreddits depression and suicide.
-- Scraped the data of reddits containing depression and suicide. I scraped nearly 3000 posts.
-- Cleand the data and removed duplicate records and total number of posts left for training was 2000.
-- Performed text analysis (both unigram and bigram) and visulisation of most occuring words in both reddits.
-- Performed vectorization (Both Bag of Words and TFIDF Vectorizer) and trained the model using Random Forest Classifier , Xgboost Classifier and MultinomialNB for classification. Multinomial NB with count vectorizer gives the highest accuracy of 72%.
-- Also trained the model using Multilayer Bidirectional LSTM to build a model which has an accuracy of 67 %.
+- Performed text cleaning and removed some corpus-specific stopwords. And plotted word cloud to visualize the frequently occurring words in a corpus.
+- Performed vectorization using Both Bag of Words and TFIDF Vectorizer.
+- Used grid search cv to find the best parameters to train the model using Random Forest Classifier and archived an accuracy of 96%.
+- Trained the model using Multilayer Bidirectional LSTM with GLOBE embedding to attain an accuracy of 97%.
 
 ## Results
 
-Part of experimental results as below on
+Results of different methods applied
 
-| Model        | Acc.     | Pre.     | Rec.     | F1       | AUC      |
-| ------------ | -------- | -------- | -------- | -------- | -------- |
-| RF + TFIDF   | 0.941440 | 0.958286 | 0.906931 | 0.931861 | 0.986029 |
-| LSTM + GLOBE | 0.961845 | 0.964161 | 0.948894 | 0.956437 | 0.991860 |
+| Model        | Acc. | Pre. | Rec. | F1   |
+| ------------ | ---- | ---- | ---- | ---- |
+| RF + TFIDF   | 0.96 | 0.96 | 0.96 | 0.96 |
+| LSTM + GLOBE | 0.97 | 0.97 | 0.97 | 0.97 |
 
 ## Usage
 
