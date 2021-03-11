@@ -46,7 +46,7 @@ Results of different methods applied
 - `Dataset` : All the collected and cleaned dataset
 - `Data_Collection` : Code for scraping data from reddit and twitter
 - `Src` : All The source code for text preprocessing and building ml models
-- `Pretrained_Models` : All the Pretrained Models and tokenizers:
+- `Pretrained_Models` : All the Pretrained Models and tokenizers
 
 ## License
 
