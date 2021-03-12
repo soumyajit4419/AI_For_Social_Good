@@ -4,6 +4,7 @@
 
 ## Suicidal Ideation Detection In Online Social Content
 
+<img src="Assets/web.gif" > 
 </div>
 
 ---
@@ -47,6 +48,12 @@ Results of different methods applied
 - `Data_Collection` : Code for scraping data from reddit and twitter
 - `Src` : All The source code for text preprocessing and building ml models
 - `Pretrained_Models` : All the Pretrained Models and tokenizers
+- `Flask`: Code for server and model deployment
+
+### To run the server:
+
+- `cd Flask`
+- `python app.py`
 
 ## License
 
